@@ -1,0 +1,43 @@
+#!/bin/sh
+
+PATH=./node_modules/.bin:$PATH
+
+clean() {
+  echo "clean task not implemented"
+}
+
+lint() {
+  echo "lint task not implemented"
+}
+
+test() {
+  echo "test task not implemented"
+}
+
+install() {
+  echo "install task not implemented"
+}
+
+uninstall() {
+  echo "install task not implemented"
+}
+
+build() {
+  echo "build task not implemented"
+}
+
+start() {
+  echo "start task not implemented"
+}
+
+default() {
+  help
+}
+
+help() {
+  echo "$0 <task> <args>"
+  echo "Tasks:"
+  sed -n 's/^\([a-z][a-z_]\+\)() {/\1/p' "$0" | cat -n
+}
+
+"${@:-default}"
